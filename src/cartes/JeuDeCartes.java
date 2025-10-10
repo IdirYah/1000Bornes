@@ -54,5 +54,19 @@ public class JeuDeCartes {
 			System.out.println(config.getNbExemplaires()+" "+config.getCarte().toString());
 		}
 	}
+	public boolean checkCount(Carte[] cartes) {
+		for(Carte c:cartes) {
+			int count = 0;
+			for(Carte e:cartes) {
+				if(c.equals(e)) count++;
+			}
+			int i = 0;
+			for(Configuration inter:this.typesDeCartes) {
+				if(inter.carte.equals(c)) i=i+inter.getNbExemplaires();
+			}
+			if(i != count) return false;
+		}
+		return true;
+	}
 
 }

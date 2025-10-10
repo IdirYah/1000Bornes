@@ -5,7 +5,7 @@ public class TestJeuDeCartes {
 
 	public static void main(String[] args) {
 		JeuDeCartes jeu = new JeuDeCartes();
-		jeu.affichageJeuDeCartes();
+		System.out.println(jeu.checkCount(jeu.donnerCartes()));
 	}
 
 }

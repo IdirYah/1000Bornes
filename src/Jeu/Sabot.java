@@ -6,13 +6,11 @@ import java.util.NoSuchElementException;
 import cartes.Carte;
 
 public class Sabot implements Iterable<Carte>{
-	private Carte[] tabCartes = new Carte[110];
+	private Carte[] tabCartes;
 	private int nbCartes;
 	private int modCount = 0;
-	public Sabot(Carte...cartes) {
-		for(int i=0;i<cartes.length;i++) {
-			tabCartes[i] = cartes[i];
-		}
+	public Sabot(Carte[] cartes) {
+		this.tabCartes = cartes;
 		this.nbCartes = cartes.length;
 	}
 	public boolean estVide() {return this.nbCartes == 0;}
