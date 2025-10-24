@@ -4,17 +4,14 @@ import java.util.*;
 import cartes.*;
 
 public class GestionCartes{
+	private static Random random = new Random();
 
-	public GestionCartes(){
-	}
-	public Carte extraireV1(List<Carte> l) {
-		Random random = new Random();
+	public static Carte extraireV1(List<Carte> l) {
 		int index = random.nextInt(l.size());
 		Carte c = l.remove(index);
 		return c;
 	}
-	public Carte extraireV2(List<Carte> l) {
-		Random random = new Random();
+	public static Carte extraireV2(List<Carte> l) {
 		int index = random.nextInt(l.size());
 		ListIterator<Carte> it = l.listIterator();
 		int i=0;
@@ -26,7 +23,7 @@ public class GestionCartes{
 		it.remove();
 		return c;
 	}
-	public List<Carte> melanger(List<Carte> l){
+	public static List<Carte> melanger(List<Carte> l){
 		List<Carte> res = new ArrayList<>();
 		Random r = new Random();
 		while(!l.isEmpty()) {
@@ -37,14 +34,14 @@ public class GestionCartes{
 		}
 		return res;
 	}
-	public boolean verifierMelanger(List<Carte> l1,List<Carte> l2) {
+	public static boolean verifierMelanger(List<Carte> l1,List<Carte> l2) {
 		if(l1.size() != l2.size()) return false;
 		for(Carte e:l1) {
 			if(Collections.frequency(l1,e) != Collections.frequency(l2,e)) return false;
 		}
 		return true;
 	}
-	public List<Carte> rassembler(List<Carte> l){
+	public static List<Carte> rassembler(List<Carte> l){
 		List<Carte> res = new ArrayList<>();
 		Carte c = l.get(0);
 		res.add(c);
@@ -59,7 +56,7 @@ public class GestionCartes{
 		}
 		return res;
 	}
-	public boolean verifierRassembler(List<Carte> l) {
+	public static boolean verifierRassembler(List<Carte> l) {
 		if(l.isEmpty()) return true;
 		ListIterator<Carte> it1 = l.listIterator();
 		Carte current = it1.next();

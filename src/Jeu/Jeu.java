@@ -11,7 +11,7 @@ public class Jeu {
 		Carte[] tabCartes = jeu.donnerCartes();
 		List<Carte> listCartes = new ArrayList<>();
 		Collections.addAll(listCartes,tabCartes);
-		listCartes = (new GestionCartes()).melanger(listCartes);
+		listCartes = GestionCartes.melanger(listCartes);
 		Carte[] cartes = (Carte[])listCartes.toArray();
 		sabot = new Sabot(cartes);
 	}
